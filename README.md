@@ -22,5 +22,17 @@ let b = a; // здесь копируем значения переменной 
 console.log(a, b) // 1 1 
 a = 0; // поменяем только одну из переменных 
 console.log(a, b) // 0 1 - изменится только a, b останется нетронутой
+
+    #В JS совсем недавно появился метод для копирования объекта и его данных - ___structuredClone()___
+    const original = { name: "Strada" };
+// копируем
+const copy = structuredClone(original);
+
+console.log(copy !== original); // разные объекты, разные ссылки 
+console.log(copy.name); // "Strada" - данные скопированы 
+// поменяем имя в оригинальном объекте 
+original.name = "Страда";
+// убедимся что в копированном объекте ничего не изменилось 
+console.log(copy.name); // "Strada" - данные не изменились  
     
     
